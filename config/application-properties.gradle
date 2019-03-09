@@ -1,0 +1,4 @@
+//____________________________________PROJECT ATTRIBUTES________________________________________
+group 'org.zap.training'
+version '1.0-SNAPSHOT'
+description = """ Example project for a Gradle build - Project name: ${project.name}"""

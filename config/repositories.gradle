@@ -1,0 +1,7 @@
+//__________________________________________REPOSITORIES___________________________________________
+repositories {
+    mavenCentral()
+//    maven {
+//        url "http://repo.mycompany.com/maven2"
+//    }
+}

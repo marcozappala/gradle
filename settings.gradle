@@ -1,0 +1,3 @@
+//The properties command tells you about a project’s attributes.
+rootProject.name = 'gradle'
+

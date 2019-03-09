@@ -1,0 +1,17 @@
+apply from: './config/dependencies/test-dependencies.gradle' //the path have to start from the root
+
+//__________________________________________DEPENDECIES___________________________________________
+//The implementation/api/ testImplementation etc, are called CONFIGURATIONS. There are basic configuration available
+// thanks to the core plugins and more can be created/added manually or by including other plugins
+dependencies {
+    //This is an example of a dependency which is exported to consumers, that is to say found on their compile classpath.
+    //api 'org.apache.commons:commons-math3:3.6.1'
+
+    //This is an example of a dependency which is used internally, and not exposed to consumers on their own compile
+    //classpath.
+    implementation 'com.google.guava:guava:26.0-jre'
+
+    //JUnit testing library. Usind the array defined in the test-dependencies.gradle
+    testImplementation junitDependencies.values()
+    //testImplementation group: 'junit', name: 'junit', version: '4.12'
+}

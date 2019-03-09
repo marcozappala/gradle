@@ -1,0 +1,23 @@
+//__________________________________________PLUGINS___________________________________________
+// The plugin are needed to add functionalities to your gradle setup. The plugins block must be at the top of you
+// file. You don't need to specify the version if the plugin is included in the gradle distribution
+plugins {
+    // the base plugin is part of the core distribution of gradle
+    id "base"
+    // the java plugin used when creating JAVA application. (support Java projects). It adds a lots of configurations
+    // for dependencies, for example: 'compileOnly','implementation', 'runtimeOnly' (for test: 'testCompileOnly',
+    // 'testImplementation', 'testRuntimeOnly')
+    id 'java'
+    //lets you designate one class as having a main method, which can be executed by the build from the command line.
+    // It comes with some embedded tasks, for example 'run' that will run the mainClassName specified below in the file
+    id 'application'
+}
+
+apply from: './config/application-properties.gradle'
+apply from: './config/dependencies/dependencies.gradle'
+apply from: './config/repositories.gradle'
+apply from: './config/tasks.gradle'
+
+
+mainClassName = 'demo.App'
+
