@@ -7,6 +7,6 @@ ext {
     //this is an array of dependencies. this array could be used to refer to a number of dependencies easily. look
     // how it is used in the dependencies.gradle file
     junitDependencies = [
-            junit: "junit:junit${junitVersion}"
+            junit: "junit:junit:${junitVersion}"
     ]
 }

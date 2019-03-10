@@ -1,6 +1,6 @@
 apply from: './config/dependencies/test-dependencies.gradle' //the path have to start from the root
 
-//__________________________________________DEPENDECIES___________________________________________
+//__________________________________________DEPENDENCIES___________________________________________
 //The implementation/api/ testImplementation etc, are called CONFIGURATIONS. There are basic configuration available
 // thanks to the core plugins and more can be created/added manually or by including other plugins
 dependencies {
@@ -9,9 +9,21 @@ dependencies {
 
     //This is an example of a dependency which is used internally, and not exposed to consumers on their own compile
     //classpath.
-    implementation 'com.google.guava:guava:26.0-jre'
+    implementation 'com.google.guava:guava'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework:spring-webmvc'
 
     //JUnit testing library. Usind the array defined in the test-dependencies.gradle
     testImplementation junitDependencies.values()
     //testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
+
+dependencies {
+    // let you define the version of the dependencies and override transitive dependencies if the version specified
+    // below is higher that the one of the transitive
+    constraints {
+        implementation 'org.springframework.boot:spring-boot-starter-web:2.0.7.RELEASE'
+        implementation 'com.google.guava:guava:26.0-jre'
+        implementation 'org.codehaus.mojo:animal-sniffer-annotations:1.15'
+    }
 }
