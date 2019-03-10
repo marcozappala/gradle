@@ -4,8 +4,11 @@ apply from: './config/dependencies/test-dependencies.gradle' //the path have to 
 //The implementation/api/ testImplementation etc, are called CONFIGURATIONS. There are basic configuration available
 // thanks to the core plugins and more can be created/added manually or by including other plugins
 dependencies {
-    //This is an example of a dependency which is exported to consumers, that is to say found on their compile classpath.
-    //api 'org.apache.commons:commons-math3:3.6.1'
+    //the plugin used in this project: 'java' defines a number of configurations. basic ones are: compileOnly,
+    // runtimeOnly, implementations. The first makes the dependency classes be available in the compileClasspath
+    // (used only at compile time), the second makes the dependency classes be available in the runtimeClasspath
+    // (used only at runtime), the third makes the the dependency classes be available in both classPaths.
+    // It also exposes the testImplementation, testRuntimeOnly (same logic as above)
 
     //This is an example of a dependency which is used internally, and not exposed to consumers on their own compile
     //classpath.
@@ -13,7 +16,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework:spring-webmvc'
 
-    //JUnit testing library. Usind the array defined in the test-dependencies.gradle
+    //JUnit testing library. Using the array defined in the test-dependencies.gradle
     testImplementation junitDependencies.values()
     //testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
